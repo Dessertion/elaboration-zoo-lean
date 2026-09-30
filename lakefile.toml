@@ -1,0 +1,15 @@
+name = "ElaborationZoo"
+version = "0.1.0"
+defaultTargets = ["elaborationzoo"]
+
+[[lean_lib]]
+name = "ElaborationZoo"
+
+[[lean_exe]]
+name = "elaborationzoo"
+root = "Main"
+
+[[require]]
+name = "batteries"
+scope = "leanprover-community"
+rev = "main"
