@@ -2,6 +2,7 @@ import Batteries.Control.AlternativeMonad
 import Batteries.Data.Except
 import Batteries.Lean.EStateM
 import ElaborationZoo.Parser
+import ElaborationZoo.Util
 
 def ex1 := "\\x.x"
 def ex2 := "(\\x.x) (\\x.x)"
@@ -138,14 +139,6 @@ def pIdent : Parser Char Name := do
     throw e
 
 def pBind := pIdent <|> symbol "_"
-
-def List.foldl1 (f : α → α → α) : List α → Option α
-  | [] => .none
-  | x :: xs => .some (xs.foldl f x)
-
-def List.foldl1! [Inhabited α] (f : α → α → α) : List α → α
-  | [] => panic "womp womp"
-  | x :: xs => xs.foldl f x
 
 mutual
 partial def pAtom := (Tm.var <$> pIdent) <|> Parser.parens pTm

@@ -1,6 +1,9 @@
 import ElaborationZoo
 import ElaborationZoo.EvalClosuresNames
 
+def helpMsg :=
+  "usage: elaborationzoo [path-to-file]"
+
 def main : IO Unit := do
   let stdin ← IO.getStdin
   let stdout ← IO.getStdout

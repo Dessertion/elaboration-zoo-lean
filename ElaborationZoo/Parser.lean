@@ -1,3 +1,5 @@
+import ElaborationZoo.Util
+
 /-- `ι` is the type of input. -/
 inductive Error (ι : Type u) where
   | endOfInput  : Error ι          -- Expected more input, but there is nothing
